@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Ator;
+use App\Models\Genero;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,3 +17,13 @@ Route::get('/chavao/{serie}', function($serie){
 });
 
 Route::view('/quico', 'sobre');
+
+Route::get('/generos', function() {
+    $generos = Genero::all();
+    dd($generos);
+});
+
+Route::get('/atores', function() {
+    $vida = Ator::all();
+    dd($vida);
+});
